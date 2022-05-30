@@ -1,9 +1,7 @@
 import React, { useState} from "react";
 import LoginForm from "./components/LoginForm";
 import MainForm from "./components/MainForm";
-import NavBar from "./components/NavBar/NavBar";
-import { FcAddDatabase } from "react-icons/fc";
-import {Link} from "react-router-dom";
+
 function App() {
   const adminUser = {
     email: "admin@admin.com",
@@ -36,13 +34,9 @@ function App() {
   }
   return (
     <div className='App'>
-      <MainForm/>
-      {(user.email == "") ? (
-        <div className="welcome">
-          
-          {/* <h1>Hello</h1>
-          <button onClick={Logout}>Logout</button> */}
-          
+      {(user.email != "") ? (
+        <div className="welcome"> 
+        <MainForm/>
         </div>
       ) : (
         <LoginForm Login={Login} error={error}/>   

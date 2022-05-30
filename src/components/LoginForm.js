@@ -1,4 +1,7 @@
 import React, { useState} from "react";
+import ResetPasswordInputEmail from "./ResetPasswordInputEmail";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function LoginForm({Login, error}){
     const [details, setDetails] = useState({name:"", email:"", password:""});
@@ -8,6 +11,11 @@ function LoginForm({Login, error}){
 
         Login(details);
     }
+
+    const ResetPasswordInputEmail1 = e => {
+        return <ResetPasswordInputEmail/>;
+    }
+
     return(
         <form onSubmit={submitHandler}>
             <div className='form-inner'>
@@ -26,6 +34,7 @@ function LoginForm({Login, error}){
                     <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
                 </div>
                 <input type="submit" value="Login"/>
+                
             </div>
         </form>
     )
