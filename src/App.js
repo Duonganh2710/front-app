@@ -33,16 +33,16 @@ function App() {
     });
   }
   return (
-    <div className='App'>
-      {(user.email != "") ? (
-        <div className="welcome"> 
-        <MainForm/>
-        </div>
-      ) : (
-        <LoginForm Login={Login} error={error}/>   
-      )
-      }
-    </div>
+    <MainForm/>
+    // <div className='App'>
+    //   {(user.email == "") ? (
+    //     <MainForm/>
+
+    //   ) : (
+    //     <LoginForm Login={Login} error={error}/>   
+    //   )
+    //   }
+    // </div>
   );
   
 }
